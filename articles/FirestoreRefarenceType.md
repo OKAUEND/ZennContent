@@ -8,19 +8,20 @@ published: false
 
 # はじめに
 
-SQL のリレーションを Firestore でもしたかった
-そこで調べてみた
+Firestore を使っての開発を行っているときに、リレーションでデータを紐付けさせたくなる場面が出てきたので、
+Firestore でリレーションに近い機能がないかを調べてみました。
 
-# Firestore とは
+# Firebase と Firestore
 
-そもそも Firestore とは
-mBaaS の一つで Google がサービス展開を行っている
-NoSQL の Firestore や Hosting や Function 等の機能があり、複雑な設定や組み合わせなどが不要で
-素早くサービスの開発を行えたりするのが特徴
+そもそも Firestore とは mBaaS の一つで Google が開発とサービス展開を行ている。
+AWS や Azure とかの他の BaaS との違いは、複雑な設定や組み合わせなどが不要で素早くサービスの開発を行えたりするのが特徴。
+Firestore,Hosting,Cloud Function,Storage などがあります。
+
+Firestore は NoSQL データベース。
+使用方法は Firebase 公式が提供している、ネイティブ SDK を使うか、REST API の形でアクセスをするなどの方法がある。
 
 ## Refarence 型とは
 
-Firestore では、リレーションなどはサブドキュメントを使い、データの紐付けを行っていくが、
 多階層になったり、1 つのドキュメントがサブドキュメントとして複数存在した場合に、管理が大変になる
 その場合に、Refarence 型とよばれる Firestore の機能を使い、サブドキュメントなどの圧縮が行える
 
@@ -29,5 +30,7 @@ Firestore では、リレーションなどはサブドキュメントを使い�
 Refarence 型の作り方と、DB に入れ方
 
 ## 使い方
+
+Firestore より取得したドキュメントのキーに対して get を行うだけで利用可能
 
 # おわりに
