@@ -26,10 +26,31 @@ export const useStateTEST = () => {
 
 ```ts:Vitest
   describe("Custom hook TEST", () => {
-    it("State TEST", () => {
+    it("Atom Update TEST", async () => {
       const { result } = renderHook(() => useStateTEST());
-      expect(result.current[0]).toEqual("");
+      const [text , setText] = result.current;
+
+      expect(text).toEqual("");
+
+      act(() => {
+        setText("TEXT");
+      });
+
+      expect(text).toEqual("TEXT");
     });
+  });
+```
+
+### 勘違い
+
+これで状態の変更をテストしようとしたら、反映されなくて 1 日ぐらい悩みました。
+原因は、CustomHook の戻値が tuple であり、使用側でそれを分割代入しているため。
+CustomHook の状態が変更されると、戻り値にも反映され、それが分割代入部分にも…と考えた。
+
+### ちゃんと確認しようね
+
+```ts:Vitest
+  describe("Custom hook TEST", () => {
     it("Atom Update TEST", async () => {
       const { result } = renderHook(() => useStateTEST());
 
@@ -44,6 +65,5 @@ export const useStateTEST = () => {
   });
 ```
 
-### 勘違い
-
-### ちゃんと確認しようね
+テストで参照する値を、CustomHook の戻り値に指定するようにするだけ。
+戻り値が tuple なので、配列のインデックスを指定するのは少し見にくいなと思い、分割代入をしたので NG だった。
