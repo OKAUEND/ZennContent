@@ -8,6 +8,15 @@ published: false
 
 # はじめに
 
+Recoil 環境で Vitest のテスト時に、非同期 Selector のテストを行った時に詰まったポイントを調べて解決した方法。
+
+### 環境
+
+- Next.js 12.2.5
+- TypeScript 4.8.2
+- Recoil 0.7.5
+- Vitest 0.23.4
+
 ## コード
 
 ```ts:Recoil
