@@ -60,7 +60,7 @@ Selector の非同期処理が終わる前に、テストの処理が先に進�
 
 ### 公式ドキュメントより
 
-(Recoil Testing)[https://recoiljs.org/docs/guides/testing/#testing-recoil-state-with-asynchronous-queries-inside-of-a-react-component]
+[Recoil Testing](https://recoiljs.org/docs/guides/testing/#testing-recoil-state-with-asynchronous-queries-inside-of-a-react-component)
 
 ```ts:ヘルパー関数
 function flushPromisesAndTimers(): Promise<void> {
