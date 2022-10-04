@@ -49,7 +49,8 @@ const useAsycRecoil = () => {
 
 ただ、結果的にこのテストは失敗判定になってしまう。
 理由としては、CustomHook の戻り値が`null`になってしまうため。
-![](/images/recoil-asyc-testcase/result.png)
+
+![失敗時の画像](/images/recoil-asyc-testcase/result.png)
 
 ### 非同期の場合は待機が必要
 
