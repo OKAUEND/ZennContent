@@ -44,6 +44,13 @@ const useAsycRecoil = () => {
     });
   });
 ```
+
+通信部分は、`MSW`で mock 化しており、返答は単純な文字列の`Hello!!`にしておくこととする。
+
+ただ、結果的にこのテストは失敗判定になってしまう。
+理由としては、CustomHook の戻り値が`null`になってしまうため。
+![](/images/recoil-asyc-testcase/result.png)
+
 ## 非同期の場合は待機が必要
 
 ### 公式ドキュメントより
