@@ -3,7 +3,7 @@ title: "Vitest環境にて、Recoilの非同期Selectorの詰まったポイン�
 emoji: "🤗"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [recoil, react, vitest]
-published: false
+published: true
 ---
 
 # はじめに
