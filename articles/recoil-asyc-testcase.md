@@ -1,5 +1,5 @@
 ---
-title: "非同期Selectorの初期生成時のテスト方法"
+title: "Vitest環境にて、Recoilの非同期Selectorの詰まったポイント"
 emoji: "🤗"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [recoil, react, vitest]
