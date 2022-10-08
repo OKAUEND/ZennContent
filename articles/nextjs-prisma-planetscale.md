@@ -16,6 +16,14 @@ published: false
 
 ## 環境を構築
 
+### Next.js の環境を構築
+
+```
+yarn create next-app --typescript
+```
+
+指示に従い、設定を行っていく。
+
 ## 設定
 
 ### Prisma の設定
