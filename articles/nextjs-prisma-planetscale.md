@@ -24,6 +24,20 @@ yarn create next-app --typescript
 
 指示に従い、設定を行っていく。
 
+### Prisma をインストール
+
+```
+yarn add -D prisma
+```
+
+prisma を導入する。
+
+```
+yarn add - D @prisma/client
+```
+
+設定した Prisma schema より自動的に型を作り出す PrismaClient を導入する
+
 ## 設定
 
 ### Prisma の設定
