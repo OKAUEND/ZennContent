@@ -44,7 +44,7 @@ yarn add - D @prisma/client
 
 #### アカウント作成
 
-!(Planet Scale Singin)[https://auth.planetscale.com/sign-in]
+https://auth.planetscale.com/sign-in
 
 singup でアカウント登録
 e-mail とパスワードで自分で登録するか、Github アカウントのどちらかで登録可能
