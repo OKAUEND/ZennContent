@@ -61,4 +61,16 @@ e-mail とパスワードで自分で登録するか、Github アカウントの
 
 ### Prisma の設定
 
+公式のこのドキュメントを元に進める
+https://planetscale.com/docs/tutorials/prisma-quickstart
+
+まず最初にターミナルで prisma の基本設定をする
+
+```
+npx prisma init
+```
+
+成功するとこのような画面になる
+![初期設定完了の通知](/images/nextjs-prisma-planetscale/a6e3fbfa0cc5-20220820.png)
+
 ### PlanetScale の設定
