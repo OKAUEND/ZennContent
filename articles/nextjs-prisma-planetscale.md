@@ -118,3 +118,25 @@ pscale auth login
 
 `powershell` にこのコマンドを入力をすると、ブラウザ上に認証画面が表示され、認証するとログインが完了。
 ~~なにこの技術それすごい~~
+
+#### データベースを CUI から作成する
+
+接続する前に、CUI から接続するデータベースを作成する。
+:::message
+無料プランの場合にて、すでに 1 つデータベースを作成していたら、2 個目は作成できないので削除をしておくこと。
+:::
+
+```
+pscale db create star-app --region ap-northeast
+```
+
+このコマンドを入力すると、`star-app`という名前のデータベースが作成される。
+コマンドの中身としては、
+
+```
+pscale db create XXXXX --region YYYYY
+```
+
+`XXXXX` の部分に、作成したいデータベース名を。
+`YYYYY` の部分に、作成を行いたいリージョン先の名前を。
+ちなみに、対応してるリージョンは[こ ↑ こ ↓](https://planetscale.com/docs/concepts/regions#available-regions)で確認できる。
