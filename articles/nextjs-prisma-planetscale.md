@@ -59,6 +59,20 @@ e-mail とパスワードで自分で登録するか、Github アカウントの
 
 #### scoop を導入しておく
 
+PlanetScale CLI を導入するには、Node.js のインストール手段ではインストールできず、
+macOS なら`Homebrew `、Windows なら`Scoop`などのコマンドラインインストールツールが必要である。
+今回、私は Windows 版を導入するので、事前に`Scoop`を導入する。
+
+https://scoop.sh/
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
+```
+
+この 2 行を、順番に`powershell`に入力するだけで、端末にインストールされる。
+そのため、事前に`powershell`を導入しておくこと。
+
 ## 設定
 
 ### Prisma の設定
