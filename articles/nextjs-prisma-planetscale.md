@@ -73,6 +73,23 @@ irm get.scoop.sh | iex
 この 2 行を、順番に`powershell`に入力するだけで、端末にインストールされる。
 そのため、事前に`powershell`を導入しておくこと。
 
+#### PlanetScale CLI のインストール
+
+```
+scoop bucket add pscale https://github.com/planetscale/scoop-bucket.git
+scoop install pscale
+```
+
+これも、同じように上から順に `powershell` に入力する。
+成功したら CUI 上に`Success!`と表示される。
+
+```
+scoop update pscale
+```
+
+最新版にバージョンのアップデートをする。
+これで、CLI の導入は完了。
+
 ## 設定
 
 ### Prisma の設定
