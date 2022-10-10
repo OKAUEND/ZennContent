@@ -107,3 +107,14 @@ npx prisma init
 ![初期設定完了の通知](/images/nextjs-prisma-planetscale/a6e3fbfa0cc5-20220820.png)
 
 ### PlanetScale の設定
+
+#### PlanetScaleCLI でログインを行う
+
+PlanetScale CLI 上でログインをする。
+
+```
+pscale auth login
+```
+
+`powershell` にこのコマンドを入力をすると、ブラウザ上に認証画面が表示され、認証するとログインが完了。
+~~なにこの技術それすごい~~
