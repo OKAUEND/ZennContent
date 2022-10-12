@@ -140,3 +140,13 @@ pscale db create XXXXX --region YYYYY
 `XXXXX` の部分に、作成したいデータベース名を。
 `YYYYY` の部分に、作成を行いたいリージョン先の名前を。
 ちなみに、対応してるリージョンは[こ ↑ こ ↓](https://planetscale.com/docs/concepts/regions#available-regions)で確認できる。
+
+テーブルの作成が完了したら、次にブランチを作成する。
+
+```
+pscale branch create star-app initial-setup
+```
+
+`star-app`に`initial-setup`のブランチを作成するとなる。
+作成に成功すると、URL が表示され実際にサイトで確認してねと案内が出る。
+
