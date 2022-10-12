@@ -180,3 +180,21 @@ model Star {
 ```
 
 ファイルの拡張子は javascript の拡張子ではなく、`schema.prisma`といった専用のものとなる
+
+#### datasource について
+
+ここでは、接続先の情報を設定する
+
+- `provider`
+  で接続先の DB の種類となり、PlanetScale は mysql を使用しているので、mysql となる。
+  他だと、`PostgreSQL`や`MongoDB`など。
+
+- `url`
+  そのなの通り、DB の URL。
+  今回は環境変数に記載しているが、そのまま直接書き込む方法もある。
+  　ちなみに、環境変数に書き込む方はこの通り。
+  　`mysql://root@127.0.0.1:3309/<DATEBASE_NAME>`
+  <DATEBASE_NAME>には、上の方で作成したデータベースの名前が入る。
+  そのため、今回は、
+  　`mysql://root@127.0.0.1:3309/star-app`
+  となる
