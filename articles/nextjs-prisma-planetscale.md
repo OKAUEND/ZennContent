@@ -150,3 +150,33 @@ pscale branch create star-app initial-setup
 `star-app`に`initial-setup`のブランチを作成するとなる。
 作成に成功すると、URL が表示され実際にサイトで確認してねと案内が出る。
 
+### Prisma の Schema を設定する
+
+実際に Prisma を用いて接続を行う前に、接続先の DB の種類や DB の URL などのセットアップ情報である Prisma Schema の設定を行う。
+[Prisma Schema](https://www.prisma.io/docs/concepts/components/prisma-schema)
+
+PlanetScale を使用するときの設定については、PlanetScale のドキュメントに設定内容が書かれている。
+[ドキュメントの中段あたり](https://planetscale.com/docs/tutorials/prisma-quickstart)
+
+```js
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+model Star {
+  id              Int       @default(autoincrement()) @id
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  name            String    @db.VarChar(255)
+  constellation   String    @db.VarChar(255)
+}
+```
+
+ファイルの拡張子は javascript の拡張子ではなく、`schema.prisma`といった専用のものとなる
