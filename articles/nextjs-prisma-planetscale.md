@@ -206,4 +206,9 @@ model Star {
 #### generator client について
 
 - `provider`
+  Prisma Client で使用する Provider を指定する。
+  ただ、Client を使用する場合は`prisma-client-js`を指定する。
+
 - `previewFeatures`
+  機能が Previews で提供してるものを指定する項目。
+  今回の場合は、PlanetScale のドキュメント通り、参照整合性の`referentialIntegrity`を指定する。
