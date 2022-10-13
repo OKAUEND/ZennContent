@@ -212,3 +212,13 @@ model Star {
 - `previewFeatures`
   機能が Previews で提供してるものを指定する項目。
   今回の場合は、PlanetScale のドキュメント通り、参照整合性の`referentialIntegrity`を指定する。
+
+#### model について
+
+テーブルの構造を定義します。
+`model XXXX`で、`XXXX`にテーブル名を指定します。
+カラムのタイプについては、下記の Data model を参照。
+(Data model)[https://www.prisma.io/docs/concepts/components/prisma-schema/data-model#defining-attributes]
+
+ここでの設定が、PlanetScale 側とズレがあった場合、正しく動作しないので恐れがあるので、
+CUI でテーブルを作りカラムの設定をした場合には、要確認しながら作業を進めたほうが良いと思われる。
