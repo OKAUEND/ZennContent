@@ -202,3 +202,8 @@ model Star {
   - `referentialIntegrity`
     いわゆる参照整合性のこと。
     設定するかは任意ではあるが、PlanetScale などの外部キーがサポートされていない場合には、参照整合性の設定が必須となる。
+
+#### generator client について
+
+- `provider`
+- `previewFeatures`
