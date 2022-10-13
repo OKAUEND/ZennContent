@@ -198,3 +198,7 @@ model Star {
   そのため、今回は、
   　`mysql://root@127.0.0.1:3309/star-app`
   となる
+
+  - `referentialIntegrity`
+    いわゆる参照整合性のこと。
+    設定するかは任意ではあるが、PlanetScale などの外部キーがサポートされていない場合には、参照整合性の設定が必須となる。
