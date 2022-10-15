@@ -222,3 +222,20 @@ model Star {
 
 ここでの設定が、PlanetScale 側とズレがあった場合、正しく動作しないので恐れがあるので、
 CUI でテーブルを作りカラムの設定をした場合には、要確認しながら作業を進めたほうが良いと思われる。
+
+### 作成した model を元にテーブルを作成
+
+SQL を叩いてテーブルを作らずとも、Prisma の機能を使い PlanetScale にテーブルを作成することができます。
+ただし、PlanetScale に対して作成を行うには、コネクト状態である必要があり、`powershell`などで、事前に通信状態であることが必要。
+
+:::message
+常時接続状態になるので、VSCode のターミナルではなく powershell などの別の CUI 上で行う事
+:::
+
+```
+pscale connect star-app initial-setup --port 3309
+```
+
+接続が完了すると、CUI 上に成功のメッセージが表示される。
+
+![初期設定完了の通知](/images/nextjs-prisma-planetscale/a69484b9f5db-20220822.png)
