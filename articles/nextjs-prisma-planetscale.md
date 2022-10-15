@@ -229,7 +229,7 @@ SQL を叩いてテーブルを作らずとも、Prisma の機能を使い Plane
 ただし、PlanetScale に対して作成を行うには、コネクト状態である必要があり、`powershell`などで、事前に通信状態であることが必要。
 
 :::message
-常時接続状態になるので、VSCode のターミナルではなく powershell などの別の CUI 上で行う事
+常時接続状態になるので、接続処理は VSCode のターミナルではなく `powershell` などの別の CUI 上で行う事
 :::
 
 ```
@@ -238,4 +238,12 @@ pscale connect star-app initial-setup --port 3309
 
 接続が完了すると、CUI 上に成功のメッセージが表示される。
 
-![初期設定完了の通知](/images/nextjs-prisma-planetscale/a69484b9f5db-20220822.png)
+![接続成功時の通知](/images/nextjs-prisma-planetscale/a69484b9f5db-20220822.png)
+
+```
+npx prisma db push
+```
+
+![Prismaでデータベース作成完了の通知](/images/nextjs-prisma-planetscale/f814bddbf6ed-20220822.png)
+
+データベースの作成が完了すると、このような通知が CUI 上に表示される。
