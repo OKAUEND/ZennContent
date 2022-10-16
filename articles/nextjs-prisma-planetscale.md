@@ -252,9 +252,7 @@ npx prisma db push
 
 ## MySQL
 
-# MySQL で接続する
-
-## MySQL を導入
+### MySQL を導入
 
 ![MySQLの未導入エラー](/images/nextjs-prisma-planetscale/15cdd1670459-20220823.png)
 MySQL が導入されていないと、このようなエラーメッセージが表示される。
@@ -272,6 +270,8 @@ $env:path += ";C:\Program Files\MySQL\MySQL Server 8.0\bin"
 ```
 
 これで MySQL の導入が完了。
+
+### MySQL で試してみる
 
 ```
 pscale shell star-app initial-setup
