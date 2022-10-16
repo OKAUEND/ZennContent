@@ -298,6 +298,9 @@ SHOW tables;
 SQL のコマンドは一通り使えるみたいです。
 ![SQLコマンド](/images/nextjs-prisma-planetscale/3ada18e9fad1-20220823.png)
 
+使用感としては、Prisma 経由というよりも PlanetScale CLI を操作してるので、
+フロントエンドで実際にコンポーネントから使うというよりかは、テーブルの確認等などの作業向けかなとは個人の感想。
+
 ## Next.js
 
 ### 前提ファイルを作成
