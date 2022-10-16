@@ -252,4 +252,50 @@ npx prisma db push
 
 ## MySQL
 
+# MySQL で接続する
+
+## MySQL を導入
+
+![MySQLの未導入エラー](/images/nextjs-prisma-planetscale/15cdd1670459-20220823.png)
+MySQL が導入されていないと、このようなエラーメッセージが表示される。
+
+公式ドキュメントを元に、MySQL を導入する。
+https://planetscale.com/docs/concepts/planetscale-environment-setup#windows-instructions
+
+MySQL のサイトより、Win 版 MySQL を導入する。
+https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html
+
+PowerShell から MySQL を起動する前に、インストール先の MySQL のパスを一時追加する。
+
+```
+$env:path += ";C:\Program Files\MySQL\MySQL Server 8.0\bin"
+```
+
+これで MySQL の導入が完了。
+
+```
+pscale shell star-app initial-setup
+```
+
+CLI 経由で Shell を起動する。
+![SQLのShellを起動](/images/nextjs-prisma-planetscale/aac5b437a8da-20220823.png)
+すると、
+
+```
+star-app/initial-setup >
+```
+
+MySQL シェルに入り、SQL 周りの操作が可能になります。
+試しに、作成したテーブルを表示してみる。
+
+```
+SHOW tables;
+```
+
+![テーブル](/images/nextjs-prisma-planetscale/0760aedabd39-20220823.png)
+テーブルが表示されます。
+
+SQL のコマンドは一通り使えるみたいです。
+![SQLコマンド](/images/nextjs-prisma-planetscale/3ada18e9fad1-20220823.png)
+
 ## Next.js
