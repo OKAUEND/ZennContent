@@ -299,3 +299,24 @@ SQL のコマンドは一通り使えるみたいです。
 ![SQLコマンド](/images/nextjs-prisma-planetscale/3ada18e9fad1-20220823.png)
 
 ## Next.js
+
+### 前提ファイルを作成
+
+Next.js では API Router にて使用します。
+それにはまず、開発環境下でも使用できるように、`Prisma Client`の事前設定が必要です。
+作成場所は、公式ドキュメントは`lib/****.js(ts)`となっておりますが、
+参照は使用したいファイルから手動で参照パスを設定するため、割と自由が効きます。
+
+```ts:lib/prisma.ts
+import { PrismaClient } from '@prisma/client'
+
+const prisma = global.prisma || new PrismaClient();
+
+if (process.env.NODE_ENV === "development") global.prisma = prisma;
+
+export default prisma
+```
+
+開発環境下だと`PrismaClient`をそのまま使えないので、Next.js の`global`に`prisma`プロパティを作成し、
+そのプロパティに`PrismaClient`のインスタンスを作成し、再利用する処理が必須になります。
+
