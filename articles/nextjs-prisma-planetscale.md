@@ -247,3 +247,9 @@ npx prisma db push
 ![Prismaでデータベース作成完了の通知](/images/nextjs-prisma-planetscale/f814bddbf6ed-20220822.png)
 
 データベースの作成が完了すると、このような通知が CUI 上に表示される。
+
+# 使ってみる
+
+## MySQL
+
+## Next.js
