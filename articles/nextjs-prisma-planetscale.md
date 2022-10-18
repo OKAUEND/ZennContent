@@ -371,3 +371,16 @@ import prisma from "../../src/lib/prisma";
 
 必須となるのはこの部分で、上記で作成した`PrismaClient`のライブラリを使用することですね。
 
+### 実際の使い方
+
+https://www.prisma.io/docs/concepts/components/prisma-client/crud
+
+#### Get
+
+```ts
+const star = await prisma.star.findMany({});
+```
+
+prisma のプロパティとして star があり、それに対して一括取得の`findMany`をのメソッドを行うってことになります。
+上記の`Prisma Schema`で Client に対する設定と、model の設定を行ったのは、この処理を行うために予測候補を出すことが可能になり、
+また、プロパティなどが`any`になることを防ぎ、型を指定できるためです。
