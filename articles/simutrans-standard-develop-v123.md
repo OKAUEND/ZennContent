@@ -16,9 +16,22 @@ published: false
 
 ### Microsoft Visual Studio
 
+https://visualstudio.microsoft.com/ja/
+
+公式より`Visual Studio`を入手するために、Microsoft の公式よりダウンロードをします。
+
 ### Git
 
-### vcpkg
+https://git-scm.com/
+ライブラリやソースコードを入手するために、github にあるのをクローンで入手する必要があるため、
+Git を導入するため公式よりダウンロードをします。
+
+### vcpkg(※要 Git)
+
+https://github.com/microsoft/vcpkg
+
+以前ですと、ライブラリを入手するために別途 DL していっていましたが、最近のは Microsoft が適用してる
+クロスプラットフォームパッケージより入手します。
 
 ### Simutrans 本体と Pak を入手
 
