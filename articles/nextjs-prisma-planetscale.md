@@ -361,3 +361,13 @@ const handler: Handler = async (request, response) => {
 
 export default handler;
 ```
+
+公式ドキュメント通りで全体像としてはこんな感じに。
+Next.js でよく作られる API Router とそこまで違うがあるわけではありません。
+
+```ts
+import prisma from "../../src/lib/prisma";
+```
+
+必須となるのはこの部分で、上記で作成した`PrismaClient`のライブラリを使用することですね。
+
