@@ -384,3 +384,17 @@ const star = await prisma.star.findMany({});
 prisma のプロパティとして star があり、それに対して一括取得の`findMany`をのメソッドを行うってことになります。
 上記の`Prisma Schema`で Client に対する設定と、model の設定を行ったのは、この処理を行うために予測候補を出すことが可能になり、
 また、プロパティなどが`any`になることを防ぎ、型を指定できるためです。
+
+```ts
+const star = await prisma.star.findMany({
+  where: {
+    type: "G-type",
+  },
+});
+```
+
+条件付きクエリを行う場合は、`findMany`の引数に`where`プロパティが含まれるオブジェクトを渡します。
+:::message
+`G-type`とは、恒星の種類の事です。
+他には`A-type`や`F-type`などがあるよ！
+:::
