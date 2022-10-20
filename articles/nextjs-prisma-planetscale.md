@@ -430,3 +430,30 @@ const star = await prisma.star.findMany({
 ```
 
 `inclued`に`inclued`をネストさせることで、結合させたいテーブルのさらに別のテーブルを結合させることができます。
+
+#### Create
+
+次はテーブルにデータを作る方法です。
+~~順番が逆なきもしますがきにしない！~~
+
+```ts
+const star = await prisma.star.create({
+  name: "sol",
+  constellation: "sol",
+});
+```
+
+取得のときと同じく、`star`に対してメソッドを指定します。
+作成はそのまま`create`を指定。
+
+```ts
+const star = await prisma.star.createMany({
+  data: [
+    { name: "sol", constellation: "sol" },
+    { name: "Sirius", constellation: "Canis" },
+    { name: "Canopus", constellation: "Carina" },
+  ],
+});
+```
+
+複数追加する場合もメソッドが用意されており、data のプロパティに配列として作成したい値を持たせるとなります。
