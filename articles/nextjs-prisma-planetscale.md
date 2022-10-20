@@ -398,3 +398,18 @@ const star = await prisma.star.findMany({
 `G-type`とは、恒星の種類の事です。
 他には`A-type`や`F-type`などがあるよ！
 :::
+
+ID などで一つのデータをデータベースから探し出す場合は、`findUnique`というメソッドを使用します。
+その場合でも、findMany と同じく model に対するメソッドとして使用しますし、条件も findMany と同じ感じで行います。
+
+```ts
+const star = await prisma.star.findUnique({});
+```
+
+```ts
+const star = await prisma.star.findMany({
+  where: {
+    name: "Sol",
+  },
+});
+```
