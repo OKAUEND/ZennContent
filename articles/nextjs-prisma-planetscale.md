@@ -414,4 +414,19 @@ const star = await prisma.star.findUnique({
 });
 ```
 
+他のテーブルと結合する方法は、`include`プロパティを追加し結合させたいテーブル名を記載し、真偽値を有効化させます。
 
+https://www.prisma.io/docs/concepts/components/prisma-client/relation-queries
+
+```ts
+const star = await prisma.star.findMany({
+  where: {
+    name: "Sol",
+  },
+  include: {
+    Planet: true,
+  },
+});
+```
+
+`inclued`に`inclued`をネストさせることで、結合させたいテーブルのさらに別のテーブルを結合させることができます。
