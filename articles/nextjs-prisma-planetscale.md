@@ -407,9 +407,11 @@ const star = await prisma.star.findUnique({});
 ```
 
 ```ts
-const star = await prisma.star.findMany({
+const star = await prisma.star.findUnique({
   where: {
     name: "Sol",
   },
 });
 ```
+
+
