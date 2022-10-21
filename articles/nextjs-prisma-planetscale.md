@@ -457,3 +457,33 @@ const star = await prisma.star.createMany({
 ```
 
 複数追加する場合もメソッドが用意されており、data のプロパティに配列として作成したい値を持たせるとなります。
+
+#### Delete
+
+```ts
+const star = await prisma.star.delete({
+  where: {
+    name: "Sol",
+  },
+});
+```
+
+`where`でそのコードをもつ単一データを削除します。
+もし、一つの指定で複数のレコードを削除する場合は、`deleteMany`を使用します。
+
+```ts
+const star = await prisma.star.deleteMany({
+  where: {
+    name: {
+      contains: "Sol",
+    },
+  },
+});
+```
+
+ちなみに全部のレコードを消すには、`deleteMany`の引数を何も指定せず。
+レコード全消しは、管理画面からの操作以外でもそうそう使うことはないかと思いますが…。
+
+```ts
+const star = await prisma.star.deleteMany({});
+```
