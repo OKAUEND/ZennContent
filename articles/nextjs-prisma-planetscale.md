@@ -487,3 +487,34 @@ const star = await prisma.star.deleteMany({
 ```ts
 const star = await prisma.star.deleteMany({});
 ```
+
+#### Update
+
+```ts
+const star = await prisma.star.update({
+  where: {
+    name: "Sol",
+  },
+  data: {
+    type: "Red-giant",
+  },
+});
+```
+
+`Where`で対象を指定して、`data`で書き換える内容を指定します。
+この方法は、1 つのレコードに対して行えるため、複数のレコードに対しては`updateMany`を使います。
+
+```ts
+const star = await prisma.star.updateMany({
+  where: {
+    name: {
+      contains: "Sol",
+    },
+  },
+  data: {
+    type: "Red-giant",
+  },
+});
+```
+
+`where`で、指定するプロパティに`contains`プロパティを足すことで複数のレコード指定をする形になります。
