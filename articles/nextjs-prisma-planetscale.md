@@ -18,6 +18,13 @@ published: false
 
 # Prisma とは
 
+https://www.prisma.io/docs/concepts
+
+Prisma はオープンソースの Node.js の次世代 ORM です。
+Node.js か TypeScript のバックエンドアプリケーション、もしくはサーバー機能を持つフロントエンドフレームワーク上で動作します。
+
+特徴としては、`Schema`などの設定ファイルなどから、TypeScript 環境でも型を適した型を推測して生成する点。
+
 # PlanetScale とは
 
 # 実際にやってみた
