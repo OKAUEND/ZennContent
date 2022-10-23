@@ -518,3 +518,9 @@ const star = await prisma.star.updateMany({
 ```
 
 `where`で、指定するプロパティに`contains`プロパティを足すことで複数のレコード指定をする形になります。
+
+# おわり
+
+これで、Next.js で Prisma+PlanetScale を扱うことができます。
+mySQL を導入したり、PlanetScale CLI のインストールが node で行うことが出来ないので、
+少し環境構築が複雑ですが、それ以外は`axios`とかと同じように扱えるため、APIRouter 上で簡単に扱えると思います。
