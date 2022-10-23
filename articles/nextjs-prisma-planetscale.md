@@ -8,6 +8,14 @@ published: false
 
 # はじめに
 
+今話題の PlanetScale をフロントエンド上から使うために、その環境を構築していこうと思います。
+
+```
+- Next.js `12.2.5`
+- prisma `4.3.1`
+- PlanetScale CLI `0.115.0`
+```
+
 # Prisma とは
 
 # PlanetScale とは
