@@ -542,6 +542,9 @@ const star = await prisma.star.updateMany({
 
 `where`で、指定するプロパティに`contains`プロパティを足すことで複数のレコード指定をする形になります。
 
+Prisma の簡単な操作方法は以上です。
+他にもリレーションのやり方などは、公式ドキュメントでより詳しくサンプルがありますので、気になる方はそちらも目を通してみてください。
+
 # おわり
 
 これで、Next.js で Prisma+PlanetScale を扱うことができます。
