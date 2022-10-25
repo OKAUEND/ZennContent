@@ -3,7 +3,7 @@ title: "Next.js + TypeScript + Prisma + PlanetScale環境を構築する"
 emoji: "😺"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [nextjs, prisma, planetscale]
-published: false
+published: true
 ---
 
 # はじめに
