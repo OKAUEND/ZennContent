@@ -2,7 +2,7 @@
 title: "フリーゲーム:Simutransの開発環境を整える(Standard版)"
 emoji: "🎉"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["C++", "Simutrans"]
+topics: ["cpp", "Simutrans"]
 published: false
 ---
 
@@ -19,6 +19,16 @@ published: false
 https://visualstudio.microsoft.com/ja/
 
 公式より`Visual Studio`を入手するために、Microsoft の公式よりダウンロードをします。
+Simutrans は`C++`で作られており、また公式が推奨してる開発環境も`Visual Studio`なため。
+`Community`、`Professional`、`Enterprise`の 3 つがありますが、後者 2 つは有料版なので`Community`をダウンロードします。
+インストール時には、C++によるデスクトップ開発のみを選択します。
+
+![VisualStudioのインストール時にC++のみを選択する](/images/nextjs-prisma-planetscale/a6e3fbfa0cc5-20220820.png)
+:::
+他に試したい機能があれば選ぶのもありですが、正直かなり容量を食います。
+:::
+
+インストール場所などは、各自の任意の場所へ。
 
 ### Git
 
