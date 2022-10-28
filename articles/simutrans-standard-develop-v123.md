@@ -30,6 +30,8 @@ Simutrans は`C++`で作られており、また公式が推奨してる開発�
 
 インストール場所などは、各自の任意の場所へ。
 
+### Simutrans 本体と Pak とソースを を入手
+
 ### Git
 
 https://git-scm.com/
@@ -43,7 +45,8 @@ https://github.com/microsoft/vcpkg
 以前ですと、ライブラリを入手するために別途 DL していっていましたが、最近のは Microsoft が適用してる
 クロスプラットフォームパッケージより入手します。
 
-### Simutrans 本体と Pak を入手
+
+
 
 ## 構築を始める
 
