@@ -70,6 +70,18 @@ mkdir build
 /simutrans/build
 ```
 
+ドライブより下のパスがこのようになっていたら準備は完了です。
+
+次に`git clone`コマンドでダウンロードを行いますので、github の`code`ウィンドウにある、
+`https...`から始まる URL をコピーし、以下のコマンドを入力します。
+
+```
+git clone https://github.com/microsoft/vcpkg.git
+```
+
+git のインストールがうまくいっていれば、パッケージのクローニングが始まります。
+
+![GitCloning](/images/simutrans-standard/af2e5116cc110484a257f418f38f780e.png)
 
 ## 構築を始める
 
