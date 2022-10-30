@@ -30,17 +30,6 @@ Simutrans は`C++`で作られており、また公式が推奨してる開発�
 
 インストール場所などは、各自の任意の場所へ。
 
-### Simutrans の Pak とソースを を入手
-
-Simutrans は実行ファイルなどだけではプレイすることができず、モデルやゲーム内容などの数値が設定されている`Pak`が必要となります。
-:::
-pak64 や pak128、pak128jp など、内容によって種類が結構存在します。
-:::
-開発やデバッグにもゲームをプレイするために`Pak`が必要なため、`Pak`を入手する必要があります。
-
-今回は Wa 氏が作成されている、日本風景感の`Pak`である、`pak.nippon`を導入しましょう。
-https://github.com/wa-st/pak-nippon/releases/tag/v0.6.1
-
 ### Git
 
 https://git-scm.com/
@@ -91,6 +80,29 @@ git clone https://github.com/microsoft/vcpkg.git
 git のインストールがうまくいっていれば、パッケージのクローニングが始まります。
 
 ![GitCloning](/images/simutrans-standard/af2e5116cc110484a257f418f38f780e.png)
+
+### Simutrans の Pak とソースを を入手
+
+Simutrans は実行ファイルなどだけではプレイすることができず、モデルやゲーム内容などの数値が設定されている`Pak`が必要となります。
+:::
+pak64 や pak128、pak128jp など、内容によって種類が結構存在します。
+:::
+開発やデバッグにもゲームをプレイするために`Pak`が必要なため、`Pak`を入手する必要があります。
+
+今回は Wa 氏が作成されている、日本風景感の`Pak`である、`pak.nippon`を導入しましょう。
+https://github.com/wa-st/pak-nippon/releases/tag/v0.6.1
+
+ダウンロードしたファイルを解凍し、中の`pak.nippon`フォルダ毎任意の場所に保存しておきましょう。
+後ほど使います。
+
+次に、Simutrans のソースコードを入手します。
+
+https://github.com/simutrans/simutrans
+
+今回もソースコードが github にあるので、git clone で入手します。
+clone 先は、一個前の項目である vcpkg で作成した`build`内にします。
+
+build フォルダ内に、`simutrans`のフォルダが新しく作られ、中に`GDI`や`SDI`とか`src`と書かれたフォルダがあるなら成功です。
 
 ## 構築を始める
 
