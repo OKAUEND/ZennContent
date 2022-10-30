@@ -86,7 +86,7 @@ git のインストールがうまくいっていれば、パッケージのク�
 
 ![GitCloning](/images/simutrans-standard/af2e5116cc110484a257f418f38f780e.png)
 
-### Simutrans の Pak とソースを を入手
+### Simutrans の Pak とソースコード を入手
 
 Simutrans は実行ファイルなどだけではプレイすることができず、モデルやゲーム内容などの数値が設定されている`Pak`が必要となります。
 :::
