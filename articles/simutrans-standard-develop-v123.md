@@ -59,13 +59,18 @@ Code の部分より直接ダウンロードをし任意のフォルダに解凍
 なので、`mkdir`コマンドを使い、フォルダを作成します。
 
 ```
+mkdir simutrans
 mkdir build
 ```
 
 そして、cd コマンドを使い作成した build フォルダへ移動します。
 
 ```
-/simutrans/build
+cd build
+```
+
+```
+<USER_DRIVE>:<USER_PATH>/simutrans/build
 ```
 
 ドライブより下のパスがこのようになっていたら準備は完了です。
