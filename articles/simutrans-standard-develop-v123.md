@@ -38,6 +38,9 @@ pak64 や pak128、pak128jp など、内容によって種類が結構存在し�
 :::
 開発やデバッグにもゲームをプレイするために`Pak`が必要なため、`Pak`を入手する必要があります。
 
+今回は Wa 氏が作成されている、日本風景感の`Pak`である、`pak.nippon`を導入しましょう。
+https://github.com/wa-st/pak-nippon/releases/tag/v0.6.1
+
 ### Git
 
 https://git-scm.com/
