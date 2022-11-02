@@ -33,8 +33,6 @@ MySQL 互換のサーバーレスデータベースです。
 特徴としては、Git のようにブランチ機能を備えており開発や公開版など、
 設定を変えての開発が可能となっている点です。
 
-# 実際にやってみた
-
 ## 環境を構築
 
 ここから、フロントエンド環境から PlanetScale を扱うために環境を構築していきます。
@@ -65,7 +63,7 @@ yarn add - D @prisma/client
 
 サーバーレス DB である PlanetScale を利用するので、利用できるように諸々の用意を行う。
 
-#### アカウント作成
+### アカウント作成
 
 https://auth.planetscale.com/sign-in
 
@@ -80,7 +78,7 @@ e-mail とパスワードで自分で登録するか、Github アカウントの
 初期はメールアドレスの名前になっているはずなので、use a different name?にて変更をすることが出来る。
 その後、簡単な説明がいくつか続き、最後に create database でデータベースを作成する手順になるが、それは後ほど。
 
-#### scoop を導入しておく
+### scoop を導入しておく
 
 PlanetScale CLI を導入するには、Node.js のインストール手段ではインストールできず、
 macOS なら`Homebrew `、Windows なら`Scoop`などのコマンドラインインストールツールが必要である。
@@ -96,7 +94,7 @@ irm get.scoop.sh | iex
 この 2 行を、順番に`powershell`に入力するだけで、端末にインストールされる。
 そのため、事前に`powershell`を導入しておくこと。
 
-#### PlanetScale CLI のインストール
+### PlanetScale CLI のインストール
 
 ```
 scoop bucket add pscale https://github.com/planetscale/scoop-bucket.git
@@ -131,8 +129,6 @@ npx prisma init
 
 ### PlanetScale の設定
 
-#### PlanetScaleCLI でログインを行う
-
 PlanetScale CLI 上でログインをする。
 
 ```
@@ -142,7 +138,7 @@ pscale auth login
 `powershell` にこのコマンドを入力をすると、ブラウザ上に認証画面が表示され、認証するとログインが完了。
 ~~なにこの技術それすごい~~
 
-#### データベースを CUI から作成する
+### データベースを CUI から作成する
 
 接続する前に、CUI から接続するデータベースを作成する。
 :::message
@@ -394,11 +390,11 @@ import prisma from "../../src/lib/prisma";
 
 必須となるのはこの部分で、上記で作成した`PrismaClient`のライブラリを使用することですね。
 
-### 実際の使い方
+## 実際の使い方
 
 https://www.prisma.io/docs/concepts/components/prisma-client/crud
 
-#### Get
+### Get
 
 ```ts
 const star = await prisma.star.findMany({});
@@ -454,7 +450,7 @@ const star = await prisma.star.findMany({
 
 `inclued`に`inclued`をネストさせることで、結合させたいテーブルのさらに別のテーブルを結合させることができます。
 
-#### Create
+### Create
 
 次はテーブルにデータを作る方法です。
 ~~順番が逆なきもしますがきにしない！~~
@@ -481,7 +477,7 @@ const star = await prisma.star.createMany({
 
 複数追加する場合もメソッドが用意されており、data のプロパティに配列として作成したい値を持たせるとなります。
 
-#### Delete
+### Delete
 
 ```ts
 const star = await prisma.star.delete({
@@ -511,7 +507,7 @@ const star = await prisma.star.deleteMany({
 const star = await prisma.star.deleteMany({});
 ```
 
-#### Update
+### Update
 
 ```ts
 const star = await prisma.star.update({
