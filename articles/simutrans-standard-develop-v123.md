@@ -129,6 +129,8 @@ vcpkg から必要なライブラリをインストールするために、bat �
 <PARH>/bootstrap-vcpkg.bat
 ```
 
+![vcpkg Install](/images/simutrans-standard/1714f7c07537ad43d6fff1cc30e3ef00.png)
+
 この同梱の bat ファイルの処理が終わったら、次は Simutrans の bat ファイルを起動します。
 先に vcpkg のバッチファイルを処理していないと、この後の処理ができないので、必ずやっておきましょう。
 
@@ -148,14 +150,21 @@ VisualStudio を起動したらこのようなウィンドウが表示される�
 なお、一番上のリポジトリのクローンを選ぶと、git clone と同じ事をやってくれます。
 便利ー！
 
+![VisualStudioの開始画面](/images/simutrans-standard/1bb11555aab814d7780b9ecd93d40a9e.png)
+
 選択するフォルダは`Simutrans.sln`のソリューション拡張子のファイルがあるフォルダを選択します。
 すると、VisualStudio の画面が画像のようになります。
+
+![ファイル一覧](/images/simutrans-standard/882c1db948a2dc7ad5b469812e9f3d78.png)
 
 この状態でも、`src`フォルダの中に simutrans 本体のソースコードがあるので、コーディングを行うことができますが、
 デバッグをするには今のフォルダのパス配下から、`Simutrans.sln`パス配下へ移る必要があります。
 それには、`Simutrans.sln`をダブルクリックすることで移動することができます。
 
 移動すると画像のようなツリーが表示されます。
+
+![Simutrans.sln内のソリューション一覧](/images/simutrans-standard/c793df3b54e3ea4a2e74b828247362e6.png)
+
 この状態で、`Simutrans-Main`を展開すると、ソースコードの一覧が表示されます。
 その中で`vehicle.cc`というファイルをクリックし、ソースコードを確認してみましょう。
 このファイルが主にゲーム中に乗り物がどのような動作をするかのコードが書かれているファイルになります。
@@ -167,6 +176,8 @@ VisualStudio を起動したらこのようなウィンドウが表示される�
 Simutrans-GDI を右クリックし、デバッグを選ぶとデバッグモードへ移行しますが、その前にソリューションプラットフォームで構成を設定しておきます。
 `x64`と`x86`の 2 つが設定されていますが、これを`vcpkg`のインストールで使用した bat ファイルと同じ構成を設定します。
 ここで違うの方の設定を選ぶと、構成が合わずにビルドが成功しませんので注意な点です。
+
+![ソリューション構成](/images/simutrans-standard/fa451b4810857b1bf6a76f972e25a547.png)
 
 `ローカルWindowsデバッガー`をクリックするとデバッグのためのビルドが始まります。
 ただし、このデバックはこのような警告画面が表示され失敗になります。
@@ -180,5 +191,7 @@ ai,config,font,music,script,text,themes などを、`build`フォルダの`GDI`�
 これでデバッグの用意が完了しました。
 
 `ローカルWindowsデバッガー`を再度クリックし、ゲームが起動するか確認しましょう。
+
+![起動成功](/images/simutrans-standard/badf00bbe6c4731d76c33715a6359809.png)
 
 お疲れ様でした！
