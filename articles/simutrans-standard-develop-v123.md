@@ -23,7 +23,7 @@ Simutrans は`C++`で作られており、また公式が推奨してる開発�
 `Community`、`Professional`、`Enterprise`の 3 つがありますが、後者 2 つは有料版なので`Community`をダウンロードします。
 インストール時には、C++によるデスクトップ開発のみを選択します。
 
-![VisualStudioのインストール時にC++のみを選択する](/images/simutrans-standard/77e21aaf93efd499a8ac3520cec879e2.png)
+![VisualStudioのインストール時にC++のみを選択する](/images/simutrans-standard/b43295599e701ff9e259e737be52301e.png)
 :::
 他に試したい機能があれば選ぶのもありですが、正直かなり容量を食います。
 :::
