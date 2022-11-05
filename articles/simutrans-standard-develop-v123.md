@@ -9,6 +9,12 @@ published: false
 # はじめに
 
 フリーゲームの Simutrans の開発環境を構築してみましたので、今回はその手順を記事にしてみました。
+Windows10 での環境構築となります。
+
+- Windows 10
+- Visual Studio Community 2022
+- vcpkg
+- C++
 
 # Simutrans について
 
