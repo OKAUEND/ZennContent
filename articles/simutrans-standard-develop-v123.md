@@ -198,6 +198,9 @@ Simutrans-GDI を右クリックし、デバッグを選ぶとデバッグモー
 
 `Simutrans.sln`が存在するフォルダに、`simutrans`フォルダが存在しその中に最新のゲームの基本設定ファイルが存在します。
 ai,config,font,music,script,text,themes などを、`build`フォルダの`GDI`フォルダ内へコピペします。
+
+![基本ファイル郡](/images/simutrans-standard/27ee659e78a98c55ba13822cacf30606.png)
+
 それらのフォルダをコピペできたら、次はゲームの車両モデルなどが入っている`pak`を同じ`GDI`フォルダへコピペします。
 今回は、前にダウンロードした`pak.nippon`の Pak をコピペします。
 これでデバッグの用意が完了しました。
