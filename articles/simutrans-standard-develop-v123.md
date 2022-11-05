@@ -138,7 +138,7 @@ vcpkg から必要なライブラリをインストールするために、bat �
 コピペが完了したら、次はコマンドプロンプトでまずは`vcpkg`同梱の bat ファイルを起動します。
 
 ```
-<PARH>/bootstrap-vcpkg.bat
+<PATH>/bootstrap-vcpkg.bat
 ```
 
 ![vcpkg Install](/images/simutrans-standard/1714f7c07537ad43d6fff1cc30e3ef00.png)
@@ -147,7 +147,7 @@ vcpkg から必要なライブラリをインストールするために、bat �
 先に vcpkg のバッチファイルを処理していないと、この後の処理ができないので、必ずやっておきましょう。
 
 ```
-<PARH>/install-building-libs-x64.bat
+<PATH>/install-building-libs-x64.bat
 ```
 
 今回は 64 ビット版を導入するので x64 の方を使用します。
