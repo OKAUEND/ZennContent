@@ -116,10 +116,14 @@ https://github.com/wa-st/pak-nippon/releases/tag/v0.6.1
 
 https://github.com/simutrans/simutrans
 
+### Git Clone
+
 今回もソースコードが github にあるので、git clone で入手します。
 clone 先は、一個前の項目である vcpkg で作成した`build`内にします。
 
-build フォルダ内に、`simutrans`のフォルダが新しく作られ、中に`GDI`や`SDI`とか`src`と書かれたフォルダがあるなら成功です。
+build フォルダ内に、`simutrans`のフォルダが新しく作られ、中に`GDI`や`SDI`とか`src`と書かれた拡張子のファイルやフォルダがあるなら成功です。
+
+### Git Fork
 
 # 構築を始める
 
