@@ -116,9 +116,27 @@ https://github.com/wa-st/pak-nippon/releases/tag/v0.6.1
 
 https://github.com/simutrans/simutrans
 
-### Git Clone
+### Git Fork
 
-今回もソースコードが github にあるので、git clone で入手します。
+Git Clone でソースコードをローカルフォルダにダウンロードをし、そのソースコードに変更をかけコミットをしようとした場合、
+元の Simutrans 本体のソースコードを管理しているリポジトリへ編集内容の更新をかけてしまうため、それだとよろしくないため、
+フォークをすることにより親元から派生したリポジトリを自環境に作るようにします。
+
+:::message
+Fork をするには Github のアカウントが必要です。
+:::
+
+https://github.com/aburch/simutrans
+
+Simutrans Standard のリポジトリより Fork を行います。
+リポジトリ画面の右上にある、`Fork`と書かれたボタンをクリックすると新しいフォークを作成する画面へ移動します。
+そこで、自分のリポジトリへ作成する時のリポジトリ名を決めます。
+
+`Copy the master branch only`は、親元のリポジトリにある`master`(もしくは`main`)ブランチのみコピーするかどうかの問です。
+他の開発中ブランチへ貢献したい場合はここのチェックボックスを外す必要があります。
+`Create fork`ボタンを押すと自分のアカウントに対してリポジトリが作られますので、これで fork は完了です。
+
+最後に fork して作成したリポジトリの Git clone を行い、ローカル環境にダウンロードをします。
 clone 先は、一個前の項目である vcpkg で作成した`build`内にします。
 
 build フォルダ内に、`simutrans`のフォルダが新しく作られ、中に`GDI`や`SDI`とか`src`と書かれた拡張子のファイルやフォルダがあるなら成功です。
