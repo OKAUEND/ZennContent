@@ -130,6 +130,9 @@ https://github.com/aburch/simutrans
 
 Simutrans Standard のリポジトリより Fork を行います。
 リポジトリ画面の右上にある、`Fork`と書かれたボタンをクリックすると新しいフォークを作成する画面へ移動します。
+
+![SimutransリポジトリのGitFork](/images/simutrans-standard/4860b6b0db89c14cd58b18c2a0ff351b.png)
+
 そこで、自分のリポジトリへ作成する時のリポジトリ名を決めます。
 
 `Copy the master branch only`は、親元のリポジトリにある`master`(もしくは`main`)ブランチのみコピーするかどうかの問です。
