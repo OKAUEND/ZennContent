@@ -3,7 +3,7 @@ title: "フリーゲーム:Simutransの開発環境を整える(Standard版)"
 emoji: "🎉"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["cpp", "Simutrans"]
-published: false
+published: true
 ---
 
 # はじめに
