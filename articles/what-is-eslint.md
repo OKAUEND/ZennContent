@@ -3,7 +3,7 @@ title: "ESLintなんもわからんから調べた"
 emoji: "🙌"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [eslint]
-published: false
+published: true
 ---
 
 ## ESLint なんもわからん
