@@ -2,7 +2,7 @@
 title: 'Next.js 13 App RouterのRoute HandlerでQueryを取る'
 emoji: '🤖'
 type: 'tech' # tech: 技術記事 / idea: アイデア
-topics: []
+topics: ['react', 'nextjs']
 published: false
 ---
 
