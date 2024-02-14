@@ -64,7 +64,7 @@ https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case1/CaseOne.t
 
 ---
 
-```
+```ts:Case
 import type {
   Meta,
   StoryObj
@@ -100,9 +100,9 @@ type Story = StoryObj < typeof meta >
 
 NG な点
 
-- [] mui の不要なライブラリもインポートされている
-- [] そもそも、CaseOne のコンポーネントがインポートされていない
-- [] `as Meta`になっており、無理にキャストしているような気がする
+- mui の不要なライブラリもインポートされている
+- そもそも、CaseOne のコンポーネントがインポートされていない
+- `as Meta`になっており、無理にキャストしているような気がする
 
 ## Case2
 
@@ -120,7 +120,7 @@ https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case2/CaseTwo.t
 
 ---
 
-```
+```ts:Case
 import {
   Box,
   Typography,
@@ -235,8 +235,8 @@ export const Default: Story = {
 
 NG な点
 
-- [] CaseTwo のコンポーネントを StoryBook のファイル内に直接生成している
-- [] 生成に 15 秒ほど時間を要した
+- CaseTwo のコンポーネントを StoryBook のファイル内に直接生成している
+- 生成に 15 秒ほど時間を要した
 
 ## Case3
 
@@ -253,7 +253,7 @@ https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case3/CaseThree
 
 ---
 
-```
+```ts:Case
 import type {
   Meta,
   StoryObj
@@ -366,8 +366,8 @@ type Story = StoryObj < typeof meta >
 
 NG な点
 
-- [] 型を StoryBook 内に再定義している
-- [] コンポーネント内容を StoryBook 内に再定義している
+- 型を StoryBook 内に再定義している
+- コンポーネント内容を StoryBook 内に再定義している
 
 ## Case4
 
@@ -386,7 +386,7 @@ https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case4/CaseFour.
 
 ---
 
-```
+```ts:Case
 import type {
   Meta,
   StoryObj
@@ -425,7 +425,7 @@ type Story = StoryObj < typeof meta >
 
 NG な点
 
-- [] ボタンクリック等の確認は別途テストファイルで行う必要がありそう
+- ボタンクリック等の確認は別途テストファイルで行う必要がありそう
 
 ## Case5
 
@@ -445,7 +445,7 @@ https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case4/CaseFour.
 
 ---
 
-```
+```ts:Case
 import type {
   Meta,
   StoryObj
@@ -476,8 +476,8 @@ type Story = StoryObj < typeof meta >
 
 NG な点
 
-- [] API 通信に関しては考慮されていない
-- [] msw を args 内にしていない
+- API 通信に関しては考慮されていない
+- msw を args 内にしていない
 
 ## 振り返り
 
