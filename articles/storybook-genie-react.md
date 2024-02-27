@@ -1,35 +1,35 @@
 ---
-title: "StoryBookのAI生成アドオンを検証してみる"
+title: "StorybookのAI生成アドオンを検証してみる"
 emoji: "🐕"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["react","storybook","openai"]
+topics: ["react","Storybook","openai"]
 published: false
 ---
 
 # AI 時代
 
-Github Copilot で開発体験が向上し、なかった時代に戻れない体になってしまいました。
+GitHub Copilot で開発体験が向上し、なかった時代に戻れない体になってしまいました。
 予測候補でどのようなコードが想定されるかを表示してくれるのは、使わなかったとしてもどの方向性に目指すべきか指標とはなります。
-その中で、StoryBook 向けの AI 生成のライブラリを見つけたので、試してみようと思います。
+Storybook 向けの AI 生成のライブラリを見つけたので、試してみようと思います。
 
-# StoryBook Genie
+# Storybook Genie
 
-https://github.com/eduardconstantin/storybook-genie
+https://github.com/eduardconstantin/Storybook-genie
 
-StoryBookGenie は、OpenAI を利用した AI 生成のライブラリです。
+StorybookGenie は、OpenAI を利用した AI 生成のライブラリです。
 
 ```
-npx storybook-genie
+npx Storybook-genie
 ```
 
-CLI を入力すると、候補のコンポーネントが CLI 上に表示され、選択をすると`StoryBook`のファイルが対象ファイルの階層に生成されます。
+CLI を入力すると、候補のコンポーネントが CLI 上に表示され、選択をすると`Storybook`のファイルが対象ファイルの階層に生成されます。
 使い方としては非常にシンプルですので、使い方の記事ではなく、複数のケースでどのようなファイルが生成されるかを試してみます。
 
 # 検証とは何するの？
 
 フロントエンドでよく使われるパターンをいくつか想定してコンポーネントと Hook を作成してみました。
-これらの対象に対して、どのような StoryBook のファイルが生成されるかを試してみます。
-また、StoryBook-Genie は OpenAI を利用しているため、使った Token 分だけ費用がかかります。
+これらの対象に対して、どのような Storybook のファイルが生成されるかを試してみます。
+また、Storybook-Genie は OpenAI を利用しているため、使った Token 分だけ費用がかかります。
 ですので、対象に対してどれぐらいの Token と費用がかかるかもチェックをしてみたいと思います。
 
 :::message
@@ -44,7 +44,7 @@ CLI を入力すると、候補のコンポーネントが CLI 上に表示さ�
 
 - ファイルが生成されている
 - 使用 Token 数がどれぐらいでいてほしいか
-- StoryBook の使用方法を筆者のレベルより上のを出力できているか
+- Storybook の使用方法を筆者のレベルより上のを出力できているか
 
 :::message
 Token 数ですが、プラットフォーム上で確認する画面を見つけることができなかったのであとで利用金額の合算にしています。
@@ -52,13 +52,13 @@ Token 数ですが、プラットフォーム上で確認する画面を見つ�
 
 ## Case1
 
-構成としては非常にシンプルで、タイトルと 1 行程度の文章があるコンポーネントです。
+構成としては非常にシンプルで、タイトルと 1 行程度の文章があるコンポーネント。
 
-https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case1/CaseOne.tsx
+https://github.com/OKAUEND/Storybook-genie/blob/main/src/feature/Case1/CaseOne.tsx
 
 ### 確認項目
 
-- 作成される StoryBook の状態を把握
+- 作成される Storybook の状態を把握
 
 では試してみましょう。
 
@@ -68,7 +68,7 @@ https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case1/CaseOne.t
 import type {
   Meta,
   StoryObj
-} from '@storybook/react';
+} from '@Storybook/react';
 import {
   Box,
   Typography,
@@ -92,11 +92,10 @@ type Story = StoryObj < typeof meta >
 
 ### 確認
 
-作成される StoryBook の状態を把握 について
 出来ている点
 
-- [x] StoryBook のライブラリのインポートは出来ていますね。
-- [x] meta の宣言もできているので、確認はできそう
+- [x] Storybook のライブラリのインポートは出来てそう。
+- [x] meta の宣言もできているので、Storybook の生成は出来てそう。
 
 NG な点
 
@@ -106,9 +105,9 @@ NG な点
 
 ## Case2
 
-ケース 1 のコンポーネントよりもテキスト内容が多いコンポーネントです。
+ケース 1 のコンポーネントよりもテキスト内容が多いコンポーネント。
 
-https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case2/CaseTwo.tsx
+https://github.com/OKAUEND/Storybook-genie/blob/main/src/feature/Case2/CaseTwo.tsx
 
 ### 確認項目
 
@@ -208,7 +207,7 @@ export const CaseTwo = () => {
 import type {
   Meta,
   StoryObj
-} from '@storybook/react';
+} from '@Storybook/react';
 const meta = {
   title: "CaseTwo",
   component: CaseTwo,
@@ -227,27 +226,28 @@ export const Default: Story = {
 
 ### 確認
 
-作成される StoryBook の状態を把握 について
 出来ている点
 
-- [x] StoryBook のライブラリのインポートは出来ていますね。
-- [x] meta の宣言もできているので、確認はできそう
+- [x] ケース 1 と同じく Meta とライブラリのインポートは出来てそう
 
 NG な点
 
-- CaseTwo のコンポーネントを StoryBook のファイル内に直接生成している
+- CaseTwo のコンポーネントを Storybook のファイル内に直接生成している
 - 生成に 15 秒ほど時間を要した
+
+生成時間は何度か試して見ましたが、すぐに生成される時もあれば 15 秒ほど要した問もありました。
+AI 生成の返答時間にもよるので、ここらへんは時間帯によっては更にかかる場合もあるかもしれません。
 
 ## Case3
 
-ケース 2 の内容を親から Props で受け取り表示をする方法にしたコンポーネントです。
+ケース 2 の内容を親から Props で受け取り表示をする方法にしたコンポーネント。
 
-https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case3/CaseThree.tsx
+https://github.com/OKAUEND/Storybook-genie/blob/main/src/feature/Case3/CaseThree.tsx
 
 ### 確認項目
 
 - Props は認識しているか
-- StoryBook の args にダミーデータを作成するか
+- Storybook の args にダミーデータを作成するか
 
 では試してみましょう。
 
@@ -257,7 +257,7 @@ https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case3/CaseThree
 import type {
   Meta,
   StoryObj
-} from '@storybook/react';
+} from '@Storybook/react';
 import {
   Box,
   Typography,
@@ -357,7 +357,6 @@ type Story = StoryObj < typeof meta >
 
 ### 確認
 
-作成される StoryBook の状態を把握 について
 出来ている点
 
 - [x] Props は認識できており、args も生成出来ている
@@ -366,15 +365,15 @@ type Story = StoryObj < typeof meta >
 
 NG な点
 
-- 型を StoryBook 内に再定義している
-- コンポーネント内容を StoryBook 内に再定義している
+- 型を Storybook 内に再定義している
+- コンポーネント内容を Storybook 内に再定義している
 
 ## Case4
 
 入力をしボタンをクリックしたら入力内容が画面へリスト表示されるロジックを持つコンポーネントです。
 ロジックは Hook に、useState で値を持つ React の基本みたいな構成にしてみました。
 
-https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case4/CaseFour.tsx
+https://github.com/OKAUEND/Storybook-genie/blob/main/src/feature/Case4/CaseFour.tsx
 
 ### 確認項目
 
@@ -390,7 +389,7 @@ https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case4/CaseFour.
 import type {
   Meta,
   StoryObj
-} from '@storybook/react';
+} from '@Storybook/react';
 import {
   TextField,
   Typography,
@@ -420,8 +419,9 @@ type Story = StoryObj < typeof meta >
 
 ### 確認
 
-作成される StoryBook の状態を把握 について
 出来ている点
+
+- ケース 1 や 2 と同じく、Storybook のファイルは生成出来ている
 
 NG な点
 
@@ -430,16 +430,16 @@ NG な点
 ## Case5
 
 API 通信が行われるロジックを持つコンポーネントです。
-今回の API 通信は TanstackQuery を利用してみました。
+今回の API 通信は TanStack Query を利用してみました。
 
-https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case4/CaseFour.tsx
+https://github.com/OKAUEND/Storybook-genie/blob/main/src/feature/Case4/CaseFour.tsx
 
-なお、今回は事前に msw や storybook の msw アドオンを導入してあります。
+なお、今回は事前に msw や Storybook の msw アドオンを導入してあります。
 
 ### 確認項目
 
 - API 通信を MSW で Mock してくれるか
-- StoryBook 上に msw の項目を追加してくれるか
+- Storybook 上に msw の項目を追加してくれるか
 
 では試してみましょう。
 
@@ -449,7 +449,7 @@ https://github.com/OKAUEND/storybook-genie/blob/main/src/feature/Case4/CaseFour.
 import type {
   Meta,
   StoryObj
-} from '@storybook/react';
+} from '@Storybook/react';
 import {
   CaseFive
 } from './CaseFive';
@@ -471,7 +471,6 @@ type Story = StoryObj < typeof meta >
 
 ### 確認
 
-作成される StoryBook の状態を把握 について
 出来ている点
 
 NG な点
@@ -482,8 +481,9 @@ NG な点
 ## 振り返り
 
 5 つのケースを試してきましたが、単純なテキストのみなコンポーネントですと期待に近いものが出力されていたと思います。
-逆に、ロジックが絡んだり API 通信が行われたりする場合には、StoyBook の meta の宣言で行う設定を考慮してくれないので、
+逆に、ロジックが絡んだり API 通信が行われたりする場合には、Stoybook の meta の宣言や parameter のプロパティで行う設定を考慮してくれないので、
 手直しする必要があり、二度手間になるかなと感じました。
+また、Stories ファイル内のコード生成も改行が変な場所で入ったりするので、場合によっては手直しが必要かなと感じました。
 
 今回試した事で使用した Token 数は
 
@@ -492,8 +492,11 @@ NG な点
 
 となります。
 
+今回作成したサンプルのリポジトリはこちらになります。
+https://github.com/OKAUEND/storybook-genie
+
 # あとがき
 
 使えるものは出力した感じだとは思いますが、結構手直しが必要であったりするので、そのまま使うのは厳しいと思います。
 Copilot なら、割と学習させて使用者のコーディングに近いお作法を出力することが可能なので、
-現状ではすべての作業を AI に委託するよりかは、Copilot のように伴走しつつ助けてもらうのがベターなのかなと今回検証した感じました。
+現状ではすべての作業を AI に委託するよりかは、Copilot のように伴走しつつ助けてもらうのがベターなのかなと。
