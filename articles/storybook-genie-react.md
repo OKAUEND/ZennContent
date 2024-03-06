@@ -3,7 +3,7 @@ title: "StorybookのAI生成アドオンを検証してみる"
 emoji: "🐕"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["react","Storybook","openai"]
-published: false
+published: true
 ---
 
 # AI 時代
