@@ -60,11 +60,50 @@ const Handler = () => {
 
 # どうして変わったのか
 
+OSS で破壊的変更はあまり好まれない傾向にありますが、MSW の OSS チームがなぜこういう判断をしたのか。
+MSW の公式ブログにその経緯や考えが記事になっていたので、確認しつつ自分がどう扱っていたかを確認してみます。
+
+ということで、公式ブログの記事を見て確認していきましょう。
+https://mswjs.io/blog/introducing-msw-2.0
+
 ## 2.0 以前に OSS チームが感じていた問題点
 
-### API の高い抽象度
+```ts
+(req, res, ctx) => res(...)
+```
 
-### 根本的な Web 技術の理解が難しい
+公式では Response Resolve 関数と読んでいる関数は、非常にうまく実装できており、
+Response の抽象化が適切であり、コードリーディングがしやすいと評価しています。
+しかし、それが故に公式が目標としたことと、環境に順応できていないという問題が発生してとされています。
+
+### 根本的な Web 技術の理解を促せなかった
+
+> It failed to educate.
+>
+> The degree of abstraction in the res() function is far too high to teach you, the developer, anything about actual responses on the web. As a maintainer with >thousands of projects depending on the software I build, I feel it’s my responsibility to care about what developers learn from that software. I want them to >achieve their goals but I also want them to learn concepts and APIs they can apply even outside of MSW because I firmly believe that’s what a good software does.
+
+実装した Response Resolve 等の API が高度に抽象化がされすぎ、教育に失敗しましたと書かれています。
+たしかに、MSW を使って Web の Response や Request 周りの実装を能動的に学びにいった事はほぼありませんでした。
+というのも、私も個人プロダクト及び業務でも使用していますが、MSW の利用方法を調べたり実装方法を工夫したりしましたが、
+MSW を通して Web の Request や Response を感じ取れたことはなかったなとの振り返りでした。
+MSW チームとしては、MSW を詳しくなると同時に Web の API とかを学べるようにするのが理想だったようです。
+
+#### どう変えたのか
+
+ではどう変えたのかを見ながら、MSW チーム
+
+```ts
+import { http } from "msw";
+
+const Handler = () => {
+  return http.get("/api/user", async ({ request }) => {
+    const user = await request.json();
+    return new Response(`Hello World! ${user}`)
+  });
+};
+```
+
+### Node 環境での更新が大変
 
 # MSW 2.0 のブログと OSS から学び取れる事
 
