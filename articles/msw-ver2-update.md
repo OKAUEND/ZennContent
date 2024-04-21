@@ -45,11 +45,11 @@ const Handler = () => {
 ### これからの API
 
 ```ts
-import { http, HttpResponse } from "msw";
+import { http } from "msw";
 
 const Handler = () => {
   return http.get("/api/user", () => {
-    return HttpResponse.json({ message: "Hello World" });
+  return new Response('Hello World')
   });
 };
 ```
