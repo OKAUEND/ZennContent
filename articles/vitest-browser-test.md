@@ -52,9 +52,52 @@ PlaywrightかCypressにするかpreviewにするかを選べますが、preview�
 npm run test:browser
 ```
 
+すると、このような画面が出現しコンポーネントの様子も見えてテストの成否状態も確認できます。
+
+![テスト結果](/images/vitest-browser-test/initResult.png)
+
 ## テストコードを書いてみる
 
+### ブラウザモード用に設定ファイルを編集
+
+コンポーネントのテストをする前に少し設定を変更します。
+理由としては、Browser modeのテストと通常のテストが混在した場合にBrowser modeのテストはどちらかは実施出来ないからです。
+現状ではBrowser modeで使用するライブラリなどはBrowser modeでしか使用出来ないためです。
+
+`vitest.workspace.browser.ts`のファイルが作成されているはずなので、そちらを編集します。
+
+```
+import { defineWorkspace } from 'vitest/config'
+
+export default defineWorkspace([
+  // If you want to keep running your existing tests in Node.js, uncomment the next line.
+  // 'vite.config.ts',
+  {
+    extends: 'vite.config.ts',
+    test: {
+      name: 'browser',
+      include: ["src/**/*.browser.test.tsx"],
+      browser: {
+        enabled: true,
+        name: 'chromium',
+        provider: 'playwright',
+        // https://playwright.dev
+        providerOptions: {},
+      },
+    },
+  },
+])
+
+```
+
+`include: ["src/**/*.browser.test.tsx"]`と設定することで、`*.browser.test.tsx`のファイル名のみがテスト対象となります。
+ちなみに`.browser.`のBrowserは便宜上Browser modeのテストなので総名前付けしているだけで、任意に設定可能です。
+
 ### 今回のテストコンポーネント
+
+ではコンポーネントテストを行っていきましょう。
+今回のテスト対象は、前回までのを流用しつつ一部構成を変えてあります。
+変えた理由としては、要素の構成としてより適切に変えただけなのでテストや動作には特に影響がない部分です。
 
 ```:typescript
 import {TextField} from "@mui/material"
@@ -85,6 +128,8 @@ export default function Browser({ name }: { name: string }) {
 
 ### テストコード
 
+次にテストコードを作成していきます。
+
 ```:typescript
 import { describe, expect, test } from 'vitest'
 import { screen } from "@testing-library/react"
@@ -101,15 +146,62 @@ describe('Browser', () => {
     const {getByRole} = render(<Browser name="Browser" />)
     const input = getByRole("textbox")
     await userEvent.type(input, "a")
-    expect(screen.getByText("入力内容が不正です")).toBeInTheDocument()
+    await expect.element(screen.getByText("入力内容が不正です")).toBeInTheDocument()
   })
 })
 ```
 
+通常のVitestのテストでインポートしていたメソッドの一部がインポート先のライブラリが変わっています。
+
+- vitest-browser-react
+- @vitest/browser/context
+
+ここらへんは、Browser Modeの初期設定時に追加された内容となります。
+Browser Modeではブラウザ上でテストを行うため、いつも使っているtesting-Libraryなどを使うことができません。
+基本的な記述はJestやVitestのテストのときと同じですが一部分違っています。
+
+```
+await expect.element(getByText('Hello Browser!')).toBeInTheDocument()
+```
+
+expectのelementメソッドが読み出されています。
+これはBrowser Modeで呼び出しとなっています。
+これがないとBrowser Mode上でテストが行われたと確認されないため、必ず設定が必要になります。
+ただし、また型定義が揃っていないのでTypeScript上では型定義エラーになるので、回避するにはtesting-Library/preactの型定義ファイルが必要となります。
+このテストコードでテストを実行してみましょう。
+
 ### 結果画面はこんな感じ
+
+![テスト結果](/images/vitest-browser-test/testResult.png)
+
+テスト結果がブラウザ上に表示され、どのような画面になったかまで把握することができます。
+求めていたテスト実施がどのような状態かが視認することができ、なおかつコンポーネントテスト単位で実施できたので、目的を達成している機能だと思います！（やったぜ
+問題があるとすれば、実行速度が早すぎるためテスト実施中がどのように動くかは視認することが難しい事。
+複数のテストケースがある場合、最後に確認できるのは最後のテストのみ、とかでしょうか。
+
+# まとめ
+
+今回はVitest Browser Modeを試してみました。
 
 ## 試してみて解ったこと
 
-### Vitestの通常版との関係性
+やってみた感想としてVitest Browser Modeで良かったこと
 
-# まとめ
+- 目的のテスト実施が視認化できた
+- Jest/Vitestの資産が流用できる事
+- 環境構築がかなり楽で、コマンド1つでほぼ設定可能
+ - jsdomみたいな仮想ブラウザの環境設定をする必要がない
+- モノレポ構成でコンポーネントテストとロジックテストを完全に分離出来る事
+
+でしょうか。
+イマイチだなと思った点については
+
+- 資産が流用できるが、ライブラリの書き換えで完全に流用は無理なので乗り換えコストはある
+- モノレポの場合はファイル名や設定を変えるなどで、ディレクトリ設計を見直す必要がある
+- そもそもまだ実験中
+
+でした。
+実験中のステータスの通り、まだ本番環境では利用ができないので使えない代物ではあります。
+しかし、Playwright含め今後はコンポーネントテストはコンポーネントテスト専用な環境で、
+ロジックテストはロジックテストの環境でと、より細分化されていく流れを感じ取る事ができたと思います。
+なにより、Jestなどよりも環境構築が遥かに楽なのが好きでした。
